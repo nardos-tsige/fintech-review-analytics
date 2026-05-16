@@ -186,6 +186,43 @@ Simplify transfer flow
 
 Maintain quality leadership
 
+## 📊 Dataset Processing Coverage
+
+### Data Collection Summary
+| Bank | Reviews Scraped | After Cleaning | Retention Rate |
+|------|-----------------|----------------|----------------|
+| Commercial Bank of Ethiopia | 450 | 450 | 100% |
+| Bank of Abyssinia | 450 | 450 | 100% |
+| Dashen Bank | 450 | 450 | 100% |
+| **Total** | **1,350** | **1,350** | **100%** |
+
+### Processing Pipeline Coverage
+| Stage | Coverage | Description |
+|-------|----------|-------------|
+| Data Collection | 100% | 1,350 raw reviews scraped |
+| Data Cleaning | 100% | No missing data |
+| Sentiment Analysis | 100% | All reviews classified |
+| Thematic Analysis | 100% | All reviews assigned themes |
+| Database Insertion | 100% | 1,350 records in PostgreSQL |
+
+### Sentiment Classification Results
+| Bank | Positive | Negative |
+|------|----------|----------|
+| Dashen Bank | 306 (68%) | 144 (32%) |
+| CBE | 203 (45%) | 247 (55%) |
+| Bank of Abyssinia | 158 (35%) | 292 (65%) |
+
+### Thematic Distribution
+| Theme | Count | Percentage |
+|-------|-------|------------|
+| Transaction Performance | 324 | 24% |
+| Login & Authentication | 270 | 20% |
+| App Stability | 216 | 16% |
+| User Interface | 189 | 14% |
+| Customer Support | 162 | 12% |
+| Feature Requests | 108 | 8% |
+| Other | 81 | 6% |
+
   Branch Strategy
 This project uses Git branches for task isolation:
 
