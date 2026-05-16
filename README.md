@@ -186,7 +186,7 @@ Simplify transfer flow
 
 Maintain quality leadership
 
-## 📊 Dataset Processing Coverage
+##  Dataset Processing Coverage
 
 ### Data Collection Summary
 | Bank | Reviews Scraped | After Cleaning | Retention Rate |
