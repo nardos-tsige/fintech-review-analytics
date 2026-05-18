@@ -1,4 +1,4 @@
-name: Unit Tests
+name: CI/CD Pipeline
 
 on:
   push:
@@ -21,8 +21,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt || true
+        pip install -r requirements.txt
     
-    # Test step REMOVED - will always pass
-    - name: Skip tests for now
-      run: echo "Tests skipped - project functional"
+    - name: Run tests
+      run: |
+        pytest tests/ -v --tb=short
+    
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        flake8 scripts/ --count --max-complexity=10 --statistics
