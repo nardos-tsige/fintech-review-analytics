@@ -2,6 +2,32 @@
 
 import pandas as pd
 import re
+import logging
+import sys
+import traceback
+
+# Setup basic logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('logs/pipeline.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+def main():
+    try:
+        # Your existing code here
+        pass
+    except Exception as e:
+        logger.error(f"Error: {e}")
+        logger.error(traceback.format_exc())
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
 
 def clean_text(text):
     """Clean review text"""
@@ -65,3 +91,10 @@ def preprocess_data():
 
 if __name__ == "__main__":
     df = preprocess_data()
+
+def normalize_dates(df):
+    """Normalize review dates to YYYY-MM-DD format"""
+    df['review_date'] = pd.to_datetime(df['review_date'], errors='coerce')
+    df['review_date'] = df['review_date'].fillna(pd.Timestamp('1900-01-01'))
+    df['review_date'] = df['review_date'].dt.strftime('%Y-%m-%d')
+    return df

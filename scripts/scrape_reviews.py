@@ -1,5 +1,32 @@
 # scripts/scrape_reviews.py
 
+import logging
+import sys
+import traceback
+
+# Setup basic logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('logs/pipeline.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+def main():
+    try:
+        # Your existing code here
+        pass
+    except Exception as e:
+        logger.error(f"Error: {e}")
+        logger.error(traceback.format_exc())
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
+
 """
 Google Play Store Review Scraper for Ethiopian Banking Apps
 Collects reviews for CBE, Bank of Abyssinia, and Dashen Bank
