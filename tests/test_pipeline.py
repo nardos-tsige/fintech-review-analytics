@@ -70,4 +70,4 @@ def test_sentiment_exists():
 def test_themes_exists():
     """Test theme column exists"""
     df = pd.read_csv("data/reviews_with_themes.csv")
-    assert 'theme' in df.columns or 'identified_theme' in df.columns
+    assert 'theme' in df.columns or 'identified_theme' in df.columns"# Tests updated" 
